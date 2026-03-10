@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+:root {
+  --vert:      #2d8653;
+  --vert-lt:   #4caf80;
+  --jaune:     #f5c842;
+  --orange:    #f5824a;
+  --creme:     #fffdf5;
+  --texte:     #2c3e2d;
+  --texte-soft:#5a7060;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--creme);
+  color: var(--texte);
+  background-image: radial-gradient(circle at 15% 50%, rgba(76,175,128,0.07) 0%, transparent 50%),
+                    radial-gradient(circle at 85% 20%, rgba(245,200,66,0.08) 0%, transparent 40%);
+}
+
+/* ── NAV ─────────────────────────── */
+nav {
+  background: var(--vert);
+  padding: 0 2rem;
+  box-shadow: 0 4px 16px rgba(45,134,83,0.25);
+  
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  gap: 0.3rem;
+  padding: 0.8rem 0;
+}
+
+nav ul li {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: white;
+  padding: 0.5rem 1.1rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+nav ul li:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+/* ── H1 ──────────────────────────── */
+h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  text-align: center;
+  background: linear-gradient(135deg, var(--vert) 0%, var(--vert-lt) 50%, var(--jaune) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  padding: 3.5rem 1rem 1rem;
+  letter-spacing: 0.01em;
+}
+
+/* ── H2 ──────────────────────────── */
+h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  color: var(--vert);
+  text-align: center;
+  margin: 3rem 0 1rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+h2::after {
+  content: '';
+  display: block;
+  height: 4px;
+  border-radius: 100px;
+  background: linear-gradient(to right, var(--jaune), var(--orange));
+  margin-top: 0.4rem;
+  transform: scaleX(0.6);
+}
+
+/* ── PRÉSENTATION ────────────────── */
+.presentation {
+  max-width: 780px;
+  margin: 1.5rem auto 2rem;
+  padding: 2.5rem 2.5rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(45,134,83,0.1), 0 2px 8px rgba(0,0,0,0.04);
+  border-top: 5px solid var(--vert-lt);
+  position: relative;
+}
+
+.presentation::before {
+  content: '🌿';
+  position: absolute;
+  top: -18px;
+  right: 28px;
+  font-size: 2rem;
+}
+
+.presentation p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--texte-soft);
+  margin-bottom: 0.7rem;
+}
+
+.presentation p:last-child { margin-bottom: 0; }
+
+/* ── INFO ────────────────────────── */
+.info {
+  max-width: 780px;
+  margin: 1.5rem auto 4rem;
+  padding: 2.5rem 2.5rem;
+  background: linear-gradient(135deg, #fffbe8, #fff8ee);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(245,130,74,0.1), 0 2px 8px rgba(0,0,0,0.04);
+  border-top: 5px solid var(--jaune);
+  position: relative;
+}
+
+.info::before {
+  content: '🎟️';
+  position: absolute;
+  top: -18px;
+  right: 28px;
+  font-size: 2rem;
+}
+
+.info p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--texte-soft);
+  margin-bottom: 0.7rem;
+}
+
+.info p:last-child { margin-bottom: 0; }
+
+/* ── RESPONSIVE ──────────────────── */
+@media (max-width: 600px) {
+  .presentation, .info {
+    margin: 1rem;
+    padding: 1.8rem 1.5rem;
+  }
+}
+
+/* ── LIENS NAV ───────────────────── */
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+nav ul li:hover a {
+  color: white;
+}
