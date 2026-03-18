@@ -40,7 +40,7 @@ if ($_SESSION["fonction"] != "Directeur") {
 
         <li><div class="nav-section-label">Tableau de bord</div></li>
         <li class="nav-item">
-            <a href="index.php" class="nav-link active">
+            <a href="../index.php" class="nav-link active">
                 <span class="nav-icon">🏠</span>
                 <span>Accueil</span>
             </a>
@@ -62,7 +62,7 @@ if ($_SESSION["fonction"] != "Directeur") {
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="animaux/ajouter.php" class="submenu-link">
+                    <a href="../animeaux/form_ajouter_animal.php" class="submenu-link">
                         <span class="submenu-dot"></span>Ajouter un animal
                     </a>
                 </li>
@@ -71,54 +71,104 @@ if ($_SESSION["fonction"] != "Directeur") {
                         <span class="submenu-dot"></span>Rechercher un animal
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="../animeaux/form_modifier_animal.html" class="submenu-link">
+                        <span class="submenu-dot"></span> Modifier un animal
+                    </a>
+                    </li>
+                </li>
             </ul>
         </li>
 
-        <li class="nav-item">
-            <div class="nav-link" onclick="toggleSub(this, 'subEspeces')">
-                <span class="nav-icon">📋</span>
-                <span>Espèces</span>
-                <span class="nav-arrow">▶</span>
-            </div>
-            <ul class="submenu" id="subEspeces">
-                <li class="nav-item">
-                    <a href="especes/liste.php" class="submenu-link">
-                        <span class="submenu-dot"></span>Liste des espèces
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="especes/ajouter.php" class="submenu-link">
-                        <span class="submenu-dot"></span>Ajouter une espèce
-                    </a>
-                </li>
-            </ul>
-        </li>
+
+
+
+
+      
+        <li><hr class="nav-divider"/></li>
+
+
+<li><div class="nav-section-label">Gestion des enclos</div></li>
 
         <li class="nav-item">
             <div class="nav-link" onclick="toggleSub(this, 'subEnclos')">
-                <span class="nav-icon">🏕️</span>
-                <span>Enclos</span>
+                <span class="nav-icon">🐾</span>
+                <span>enclos</span>
                 <span class="nav-arrow">▶</span>
             </div>
-            <ul class="submenu" id="subEnclos">
+            <ul class="submenu" id="subAnimaux">
                 <li class="nav-item">
-                    <a href="enclos/liste.php" class="submenu-link">
-                        <span class="submenu-dot"></span>Liste des enclos
+                    <a href="animaux/liste.php" class="submenu-link">
+                        <span class="submenu-dot"></span>Liste des Enclos
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="enclos/occupation.php" class="submenu-link">
-                        <span class="submenu-dot"></span>Occupation des enclos
+                    <a href="animaux/ajouter.php" class="submenu-link">
+                        <span class="submenu-dot"></span>Ajouter un enclos
+                    </a>
+                </li>
+                <li class="nav-item">
+
+                </li>
+            </ul>
+        </li>
+
+
+
+        <li><hr class="nav-divider"/></li>
+
+  <li><div class="nav-section-label">Gestion des especes</div></li>
+
+        <li class="nav-item">
+            <div class="nav-link" onclick="toggleSub(this, 'subEspeces')">
+                <span class="nav-icon">🐾</span>
+                <span>Especes</span>
+                <span class="nav-arrow">▶</span>
+            </div>
+            <ul class="submenu" id="subAnimaux">
+                <li class="nav-item">
+                    <a href="animaux/liste.php" class="submenu-link">
+                        <span class="submenu-dot"></span>Liste des Especes
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="animaux/ajouter.php" class="submenu-link">
+                        <span class="submenu-dot"></span>Ajouter une Especes
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="animaux/recherche.php" class="submenu-link">
+                        <span class="submenu-dot"></span>Rechercher une  especes
                     </a>
                 </li>
             </ul>
         </li>
 
+        
         <li><hr class="nav-divider"/></li>
+
+      
 
         <li><div class="nav-section-label">Gestion du personnel</div></li>
 
         <li class="nav-item">
+            <div class="nav-link" onclick="toggleSub(this,'subDirecteurs')">
+                <span class="nav-icon">👨‍💼</span>
+                <span>Directeurs</span>
+                <span class="nav-arrow">▶</span>
+            </div>
+            <ul class="submenu" id="subDirecteurs">
+                <li class="nav-item">
+                    <a href="../directeur/afficher_directeur.php" class="submenu-link">
+                        <span class="submenu-dot"></span>liste des directeurs 
+                    </a>
+                </li>
+                <li>
+                    <a href="directeurs/ajouter" class="submenu-link">
+                        <span class="submenu-dot"> </span>ajouter directeurs
+                    </a>
+                </li>
+            </ul>
             <div class="nav-link" onclick="toggleSub(this, 'subEmployes')">
                 <span class="nav-icon">👥</span>
                 <span>Employés</span>
@@ -126,12 +176,12 @@ if ($_SESSION["fonction"] != "Directeur") {
             </div>
             <ul class="submenu" id="subEmployes">
                 <li class="nav-item">
-                    <a href="employes/liste.php" class="submenu-link">
+                    <a href="../employer/afficher_employer.php" class="submenu-link">
                         <span class="submenu-dot"></span>Liste des employés
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="employes/ajouter.php" class="submenu-link">
+                    <a href="../connexion-inscription/inscription_Employer.html" class="submenu-link">
                         <span class="submenu-dot"></span>Ajouter un employé
                     </a>
                 </li>
@@ -140,8 +190,7 @@ if ($_SESSION["fonction"] != "Directeur") {
 
         <li><hr class="nav-divider"/></li>
 
-        <!-- ── Mon compte ── -->
-        <li><div class="nav-section-label">Mon compte</div></li>
++        <li><div class="nav-section-label">Mon compte</div></li>
         <li class="nav-item">
             <a href="profil.php" class="nav-link">
                 <span class="nav-icon">👤</span>
@@ -149,7 +198,7 @@ if ($_SESSION["fonction"] != "Directeur") {
             </a>
         </li>
         <li class="nav-item">
-            <a href="logout.php" class="nav-link logout">
+            <a href="../deconexxion.php" class="nav-link logout">
                 <span class="nav-icon">🚪</span>
                 <span>Déconnexion</span>
             </a>
@@ -171,12 +220,7 @@ if ($_SESSION["fonction"] != "Directeur") {
 
 
 <script>
-    /**
-     * Ouvre ou ferme un sous-menu.
-     * Ferme tous les autres sous-menus ouverts avant d'ouvrir le nouveau.
-     * @param {HTMLElement} btn  - Le bouton cliqué
-     * @param {string}      id   - L'id du sous-menu cible
-     */
+  
     function toggleSub(btn, id) {
         const sub    = document.getElementById(id);
         const isOpen = sub.classList.contains('open');
