@@ -1,0 +1,87 @@
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: linear-gradient(135deg, #fef9e7, #fcf3cf);
+    margin: 0;
+    padding: 40px;
+    color: #4a3f2f;
+}
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #6b4f2d;
+    text-shadow: 1px 1px 0 #fff;
+}
+
+h1::before {
+    content: "🦁 ";
+}
+
+h1::after {
+    content: " 🐾";
+}
+
+form {
+    width: 420px;
+    margin: 0 auto;
+    background: #fff8e6;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    border: 2px solid #e6d5b8;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+    color: #5a4633;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #d8c7a6;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: #fffdf7;
+    font-size: 15px;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #c49b5a;
+    outline: none;
+    background: #fff9e8;
+}
+
+#submit {
+    width: 100%;
+    padding: 12px;
+    background: #d4a056;
+    border: none;
+    color: white;
+    font-size: 17px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: bold;
+}
+
+#submit:hover {
+    background: #b8833f;
+    transform: scale(1.03);
+}
+
+form::before {
+    content: "🐒🐾 Ajout d’un animal 🐾🐒";
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #7a5a3a;
+}

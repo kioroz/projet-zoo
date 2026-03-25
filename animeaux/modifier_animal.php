@@ -2,7 +2,7 @@
 <html>
 <head>
  	<meta charset="utf-8">
- 	
+ 	<link rel="stylesheet" href="style_recherche.css">
 </head>
 <body>
 <?php
@@ -18,7 +18,7 @@
 ?>
  
 	<?php
-    echo "Voici les informations concernant l'animal : " . $enreg['nom_animal'] . "<br>";
+    echo "Voici les informations concernant l'animal : " . $enreg['nom_animal'] .  "<br>";
 	echo ' <form action="update.php" method="post">';
 echo '<input type="hidden" name="id" value="' . $enreg['id'] . '">';
 

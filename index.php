@@ -12,7 +12,7 @@
             <?php
            session_start(); 
         if (!isset($_SESSION["fonction"])){
-            echo "<li><a href='connexion-inscription/connexion.html'>connexion</a></li>";
+            echo "<li><a href='connexion-inscription/connexion.html'>connexion employer</a></li>";
         }
         else if($_SESSION["fonction"] == "Employer"){
             echo "<li> <a href='menu/menu-employer.php'> menu employer</a> </li>";
@@ -22,9 +22,9 @@
         }
 
             ?>            
-            <li><a href="animaux.html">animaux</a></li>
-            <li><a href="categories.html">catégories/Espèces</a></li>
+            <li><a href="animeaux/liste_animaux.php">animeaux</a></li>
             <li><a href="contact.html">contact</a></li>
+            <li><a href="catégorie.html">catégorie d'animal</a></li>
         </ul>
     </nav>
     <h1>BIENVENUE AU ZOO DE PALMYRE</h1>

@@ -18,7 +18,7 @@ if ($_SESSION["fonction"] != "Employer") {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Menu Employer – Zoo de la Palmyre</title>
+    <title>Menu Directeur – Zoo de la Palmyre</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
 
@@ -34,7 +34,7 @@ if ($_SESSION["fonction"] != "Employer") {
         <span>Gestion du parc</span>
     </div>
 
-    <div class="role-badge">👨‍💼 employer </div>
+    <div class="role-badge">👔 Directeur</div>
 
     <ul style="list-style:none; padding:0;">
 
@@ -57,37 +57,96 @@ if ($_SESSION["fonction"] != "Employer") {
             </div>
             <ul class="submenu" id="subAnimaux">
                 <li class="nav-item">
-                    <a href="animaux/liste.php" class="submenu-link">
+                    <a href="../animeaux/liste_animaux.php" class="submenu-link">
                         <span class="submenu-dot"></span>Liste des animaux
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="animaux/ajouter.php" class="submenu-link">
+                    <a href="../animeaux/form_ajouter_animal.php" class="submenu-link">
                         <span class="submenu-dot"></span>Ajouter un animal
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="animaux/recherche.php" class="submenu-link">
+                    <a href="../animeaux/recherche_animeaux.html" class="submenu-link">
                         <span class="submenu-dot"></span>Rechercher un animal
                     </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../animeaux/form_modifier_animal.html" class="submenu-link">
+                        <span class="submenu-dot"></span> Modifier un animal
+                    </a>
+                    </li>
                 </li>
             </ul>
         </li>
 
 
 
+
+
       
         <li><hr class="nav-divider"/></li>
 
+
+<li><div class="nav-section-label">Gestion des enclos</div></li>
+
+        <li class="nav-item">
+            <div class="nav-link" onclick="toggleSub(this, 'subEnclos')">
+                <span class="nav-icon">🐾</span>
+                <span>enclos</span>
+                <span class="nav-arrow">▶</span>
+            </div>
+            <ul class="submenu" id="subEnclos">
+                <li class="nav-item">
+                    <a href="../enclos/afficher_enclos.php" class="submenu-link">
+                        <span class="submenu-dot"></span>Liste des Enclos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../enclos/ajouter_enclos.php" class="submenu-link">
+                        <span class="submenu-dot"></span>Ajouter un enclos
+                    </a>
+                </li>
+                <li class="nav-item">
+
+                </li>
+            </ul>
+        </li>
+
+
+
         <li><hr class="nav-divider"/></li>
 
-+        <li><div class="nav-section-label">Mon compte</div></li>
+  <li><div class="nav-section-label">Gestion des especes</div></li>
+
         <li class="nav-item">
-            <a href="profil.php" class="nav-link">
-                <span class="nav-icon">👤</span>
-                <span>Mon profil</span>
-            </a>
+            <div class="nav-link" onclick="toggleSub(this, 'subEspeces')">
+                <span class="nav-icon">🐾</span>
+                <span>Especes</span>
+                <span class="nav-arrow">▶</span>
+            </div>
+            <ul class="submenu" id="subEspeces">
+                <li class="nav-item">
+                    <a href="../especes/afficher_especes.php" class="submenu-link">
+                        <span class="submenu-dot"></span>Liste des Especes
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="../especes/ajouter_espece.php" class="submenu-link">
+                        <span class="submenu-dot"></span>Ajouter une Especes
+                    </a>
+                </li>
+
+            </ul>
         </li>
+
+        
+        <li><hr class="nav-divider"/></li>
+
+      
+
+
+
         <li class="nav-item">
             <a href="../deconexxion.php" class="nav-link logout">
                 <span class="nav-icon">🚪</span>
