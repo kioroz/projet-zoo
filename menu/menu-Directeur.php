@@ -160,7 +160,7 @@ if ($_SESSION["fonction"] != "Directeur") {
                     </a>
                 </li>
                 <li>
-                    <a href="directeurs/ajouter" class="submenu-link">
+                    <a href="../connexion-inscription/inscription_Directeur.html" class="submenu-link">
                         <span class="submenu-dot"> </span>ajouter directeurs
                     </a>
                 </li>

@@ -19,7 +19,7 @@
 
 
 ?>
-<h1>animeaux herbivore</h1>
+<h1>espèces herbivore</h1>
 
 <table border="1">
     <tr>

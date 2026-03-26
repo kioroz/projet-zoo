@@ -18,7 +18,7 @@
 
 
 ?>
-<h1>animeaux carnivore</h1>
+<h1>espèces carnivore</h1>
 
 <table border="1">
     <tr>

@@ -19,7 +19,7 @@
 
 
 ?>
-<h1>animeaux omnivore</h1>
+<h1>espèces omnivore</h1>
 
 <table border="1">
     <tr>

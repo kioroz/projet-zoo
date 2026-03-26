@@ -42,10 +42,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             ':id_responsable' => $id_responsable
         ]);
 
-        echo "Enclos ajouté avec succès !";
+        echo "<p>Enclos ajouté avec succès !</p>";
 
     } catch (PDOException $e) {
-        echo "Erreur lors de l'ajout : " . $e->getMessage();
+        echo "<p>Erreur lors de l'ajout : </p>" . $e->getMessage();
     }
 }
 ?>

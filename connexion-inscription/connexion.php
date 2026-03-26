@@ -1,5 +1,5 @@
 <?php
-require_once '../database.php'; 
+require_once '../database.php';
 
 session_start();
 
@@ -19,13 +19,12 @@ if ($login && $password) {
         $_SESSION['prenom'] = $user['prenom'];
 
 
-        if($_SESSION['fonction'] == "Directeur"){
+        if ($_SESSION['fonction'] == "Directeur") {
             header("Location: ../menu/menu-Directeur.php");
             exit;
-        }else{
-                        header("Location: ../menu/menu-employer.php");
-                        exit;
-
+        } else {
+            header("Location: ../menu/menu-employer.php");
+            exit;
         }
         exit;
     } else {
@@ -34,6 +33,3 @@ if ($login && $password) {
 } else {
     echo "Veuillez remplir tous les champs du formulaire.";
 }
-
-
-?>

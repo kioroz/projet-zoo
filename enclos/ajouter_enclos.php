@@ -14,6 +14,7 @@ $employer = $req->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>Ajouter un animal</title>
+    <link rel="stylesheet" href="../animeaux/style.css">
 </head>
 <body>
 

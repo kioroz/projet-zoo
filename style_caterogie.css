@@ -1,0 +1,56 @@
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+    margin: 0;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Titre */
+h1 {
+    color: #2e7d32;
+    font-size: 34px;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 0 #c8e6c9;
+}
+
+/* Texte */
+p {
+    color: #33691e;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/* Liens style boutons */
+a {
+    display: inline-block;
+    margin: 10px;
+    padding: 14px 25px;
+    background: #66bb6a;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.2s;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+/* Hover */
+a:hover {
+    background: #57a65a;
+    transform: scale(1.05);
+}
+
+/* Emojis automatiques selon la catégorie */
+a[href*="carnivore"]::before {
+    content: "🦁 ";
+}
+
+a[href*="omnivore"]::before {
+    content: "🐻 ";
+}
+
+a[href*="herbivore"]::before {
+    content: "🦒 ";
+}
