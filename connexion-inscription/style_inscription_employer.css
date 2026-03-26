@@ -1,3 +1,7 @@
+
+* {
+    box-sizing: border-box;
+}
 body {
     font-family: "Trebuchet MS", Arial, sans-serif;
     background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
@@ -85,4 +89,20 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background: #57a65a;
     transform: scale(1.02);
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #66bb6a;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.2s;
+}
+a:hover {
+    background: #57a65a;
+    transform: scale(1.05);
 }

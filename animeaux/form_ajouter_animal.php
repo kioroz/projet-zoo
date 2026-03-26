@@ -51,6 +51,6 @@ $especes = $req->fetchAll(PDO::FETCH_ASSOC);
     <button type="submit">Ajouter</button>
 
 </form>
-
+<a href="../index.php"> menu</a>
 </body>
 </html>

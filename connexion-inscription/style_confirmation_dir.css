@@ -1,0 +1,67 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Conteneur */
+.message-box {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    border: 2px solid #a5d6a7;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    width: 450px;
+}
+
+/* Message succès */
+.success {
+    color: #2e7d32;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Message erreur */
+.error {
+    color: #c62828;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Bouton retour */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: #66bb6a;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+a:hover {
+    background: #57a65a;
+    transform: scale(1.05);
+}
+
+/* Emoji décoratif */
+.message-box::before {
+    content: "🦁🐾";
+    display: block;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
