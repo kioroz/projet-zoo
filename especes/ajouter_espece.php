@@ -5,7 +5,11 @@ include "../database.php";
 $req = $pdo->query("SELECT * FROM types_nourriture");
 $espece = $req->fetchAll();
 
+if(!isset($_SESSION)){
+    header("Location: ../index.php");
+    exit;
 
+}
 
 ?>
 
@@ -14,6 +18,7 @@ $espece = $req->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>Ajouter un animal</title>
+    <link rel="stylesheet" href="../animeaux/style.css">
 </head>
 <body>
 
@@ -55,6 +60,7 @@ $espece = $req->fetchAll();
 
 
     <button type="submit">Ajouter</button>
+        <a href="../index.php">menu</a>
 
 </form>
 

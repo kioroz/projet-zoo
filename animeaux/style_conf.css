@@ -1,0 +1,51 @@
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9, #f7ffe8);
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Conteneur du message */
+.message-box {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px);
+    padding: 30px 40px;
+    border-radius: 15px;
+    border: 2px solid #a5d6a7;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    width: 450px;
+    color: #2e7d32;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Emoji décoratif */
+.message-box::before {
+    content: "🦒🐾";
+    display: block;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* Bouton retour */
+a {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 20px;
+    background: #66bb6a;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+a:hover {
+    background: #57a65a;
+    transform: scale(1.05);
+}

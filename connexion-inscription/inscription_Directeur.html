@@ -9,7 +9,7 @@
 </head>
 
 <body>
-     <form action="inscription_directeur.php" method="POST">
+     <form action="inscription_directeur.php" method="POST" enctype="multipart/form-data">
           <label for="nom">Nom:</label>
           <input type="text" id="nom" name="nom" required>
 
@@ -33,7 +33,8 @@
           <label for="password">Mot de passe:</label>
           <input type="password" id="password" name="password" required>
 
-
+<label>Saisir une photo de profil :</label>
+            <input type="file" name="image" class="style1" required><br>
 
           <input type="submit" value="S'inscrire">
           <a href="../index.php">menu</a>

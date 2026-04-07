@@ -9,6 +9,11 @@
 <body>
 
 <?php
+if(!isset($_SESSION)){
+    header("Location: ../index.php");
+    exit;
+
+}
 include '../database.php';
 
 $id   = $_POST['id'];

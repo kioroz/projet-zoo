@@ -1,0 +1,63 @@
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background: linear-gradient(135deg, #d7f5d7, #f3ffe6);
+    margin: 0;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Titre */
+h1 {
+    color: #1b5e20;
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 0 #c8e6c9;
+}
+
+/* Conteneur général */
+.box {
+    display: inline-block;
+    padding: 25px 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.4); /* semi-transparent, pas vide */
+    backdrop-filter: blur(6px); /* effet verre dépoli */
+    border: 2px solid #a5d6a7;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    text-align: left;
+    font-size: 20px;
+    color: #2e7d32;
+    max-width: 450px;
+}
+
+/* Chaque ligne */
+p {
+    margin: 12px 0;
+    font-weight: bold;
+}
+
+/* Bouton retour */
+a {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 20px;
+    background: #66bb6a;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+a:hover {
+    background: #57a65a;
+    transform: scale(1.05);
+}
+
+/* Petit emoji décoratif */
+.box::before {
+    content: "📞🐾";
+    display: block;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+}

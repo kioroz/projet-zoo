@@ -13,11 +13,19 @@
     $stmt->execute([':id' => $d]);
     $enreg = $stmt->fetch(); // un seul enregistrement
 
+if(!isset($_SESSION)){
+    header("Location: ../index.php");
+    exit;
 
+}
 
 ?>
  
 	<?php
+	if (!$enreg) {
+	    echo "<p>Aucun animal trouvé avec l'ID : " . htmlspecialchars($d) . "</p>";
+	    exit;	
+	}
     echo "Voici les informations concernant l'animal : " . $enreg['nom_animal'] .  "<br>";
 	echo ' <form action="update.php" method="post">';
 echo '<input type="hidden" name="id" value="' . $enreg['id'] . '">';

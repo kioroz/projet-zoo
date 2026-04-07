@@ -15,80 +15,92 @@ if ($_SESSION["fonction"] != "Employer") {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Menu Directeur – Zoo de la Palmyre</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="menu.css"/>
+    <link rel="stylesheet" href="menu.css" />
 </head>
+
 <body>
 
 
-<nav class="sidebar">
+    <nav class="sidebar">
 
-    <div class="sidebar-logo">
-        <h1>🦁 Zoo de la Palmyre</h1>
-        <span>Gestion du parc</span>
-    </div>
+        <div class="sidebar-logo">
+            <h1>🦁 Zoo de la Palmyre</h1>
+            <span>Gestion du parc</span>
+        </div>
 
-    <div class="role-badge">👔 Directeur</div>
+        <div class="role-badge">👔 Directeur</div>
 
-    <ul style="list-style:none; padding:0;">
+        <ul style="list-style:none; padding:0;">
 
-        <li><div class="nav-section-label">Tableau de bord</div></li>
-        <li class="nav-item">
-            <a href="../index.php" class="nav-link active">
-                <span class="nav-icon">🏠</span>
-                <span>Accueil</span>
-            </a>
-        </li>
-        <li><hr class="nav-divider"/></li>
+            <li>
+                <div class="nav-section-label">Tableau de bord</div>
+            </li>
+            <li class="nav-item">
+                <a href="../index.php" class="nav-link active">
+                    <span class="nav-icon">🏠</span>
+                    <span>Accueil</span>
+                </a>
+            </li>
+            <li>
+                <hr class="nav-divider" />
+            </li>
 
-        <li><div class="nav-section-label">Gestion des animaux</div></li>
+            <li>
+                <div class="nav-section-label">Gestion des animaux</div>
+            </li>
 
-        <li class="nav-item">
-            <div class="nav-link" onclick="toggleSub(this, 'subAnimaux')">
-                <span class="nav-icon">🐾</span>
-                <span>Animaux</span>
-                <span class="nav-arrow">▶</span>
-            </div>
-            <ul class="submenu" id="subAnimaux">
-                <li class="nav-item">
-                    <a href="../animeaux/liste_animaux.php" class="submenu-link">
-                        <span class="submenu-dot"></span>Liste des animaux
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="../animeaux/form_ajouter_animal.php" class="submenu-link">
-                        <span class="submenu-dot"></span>Ajouter un animal
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="../animeaux/recherche_animeaux.html" class="submenu-link">
-                        <span class="submenu-dot"></span>Rechercher un animal
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="../animeaux/form_modifier_animal.html" class="submenu-link">
-                        <span class="submenu-dot"></span> Modifier un animal
-                    </a>
+            <li class="nav-item">
+                <div class="nav-link" onclick="toggleSub(this, 'subAnimaux')">
+                    <span class="nav-icon">🐾</span>
+                    <span>Animaux</span>
+                    <span class="nav-arrow">▶</span>
+                </div>
+                <ul class="submenu" id="subAnimaux">
+                    <li class="nav-item">
+                        <a href="../animeaux/liste_animaux.php" class="submenu-link">
+                            <span class="submenu-dot"></span>Liste des animaux
+                        </a>
                     </li>
-                </li>
-            </ul>
+                    <li class="nav-item">
+                        <a href="../animeaux/form_ajouter_animal.php" class="submenu-link">
+                            <span class="submenu-dot"></span>Ajouter un animal
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../animeaux/recherche_animeaux.html" class="submenu-link">
+                            <span class="submenu-dot"></span>Rechercher un animal
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../animeaux/form_modifier_animal.html" class="submenu-link">
+                            <span class="submenu-dot"></span> Modifier un animal
+                        </a>
+                    </li>
+            </li>
+        </ul>
         </li>
 
 
 
 
 
-      
-        <li><hr class="nav-divider"/></li>
+
+        <li>
+            <hr class="nav-divider" />
+        </li>
 
 
-<li><div class="nav-section-label">Gestion des enclos</div></li>
+        <li>
+            <div class="nav-section-label">Gestion des enclos</div>
+        </li>
 
         <li class="nav-item">
             <div class="nav-link" onclick="toggleSub(this, 'subEnclos')">
@@ -108,6 +120,11 @@ if ($_SESSION["fonction"] != "Employer") {
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="../enclos/form_ajout_loc_animaux.php" class="submenu-link">
+                        <span class="submenu-dot"></span>Ajouter un animal dans un enclos
+                    </a>
+                </li>
+                <li class="nav-item">
 
                 </li>
             </ul>
@@ -115,9 +132,13 @@ if ($_SESSION["fonction"] != "Employer") {
 
 
 
-        <li><hr class="nav-divider"/></li>
+        <li>
+            <hr class="nav-divider" />
+        </li>
 
-  <li><div class="nav-section-label">Gestion des especes</div></li>
+        <li>
+            <div class="nav-section-label">Gestion des especes</div>
+        </li>
 
         <li class="nav-item">
             <div class="nav-link" onclick="toggleSub(this, 'subEspeces')">
@@ -140,10 +161,12 @@ if ($_SESSION["fonction"] != "Employer") {
             </ul>
         </li>
 
-        
-        <li><hr class="nav-divider"/></li>
 
-      
+        <li>
+            <hr class="nav-divider" />
+        </li>
+
+
 
 
 
@@ -154,38 +177,38 @@ if ($_SESSION["fonction"] != "Employer") {
             </a>
         </li>
 
-    </ul>
-</nav>
+        </ul>
+    </nav>
 
 
-<main class="main">
-    <div class="welcome-card">
-        <h2>
-            Bienvenue, <?php echo htmlspecialchars($_SESSION["nom"] . " " . $_SESSION["prenom"]); ?> 👋
-        </h2>
-        <p>Vous êtes connecté en tant que <strong><?php echo htmlspecialchars($_SESSION["fonction"]); ?></strong>.<br/>
-           Utilisez le menu latéral pour naviguer dans l'application.</p>
-    </div>
-</main>
+    <main class="main">
+        <div class="welcome-card">
+            <h2>
+                Bienvenue, <?php echo htmlspecialchars($_SESSION["nom"] . " " . $_SESSION["prenom"]); ?> 👋
+            </h2>
+            <p>Vous êtes connecté en tant que <strong><?php echo htmlspecialchars($_SESSION["fonction"]); ?></strong>.<br />
+                Utilisez le menu latéral pour naviguer dans l'application.</p>
+        </div>
+    </main>
 
 
-<script>
-  
-    function toggleSub(btn, id) {
-        const sub    = document.getElementById(id);
-        const isOpen = sub.classList.contains('open');
+    <script>
+        function toggleSub(btn, id) {
+            const sub = document.getElementById(id);
+            const isOpen = sub.classList.contains('open');
 
-        /* Fermer tous les sous-menus ouverts */
-        document.querySelectorAll('.submenu.open').forEach(el => el.classList.remove('open'));
-        document.querySelectorAll('.nav-link.open').forEach(el => el.classList.remove('open'));
+            /* Fermer tous les sous-menus ouverts */
+            document.querySelectorAll('.submenu.open').forEach(el => el.classList.remove('open'));
+            document.querySelectorAll('.nav-link.open').forEach(el => el.classList.remove('open'));
 
-        /* Ouvrir le sous-menu ciblé s'il était fermé */
-        if (!isOpen) {
-            sub.classList.add('open');
-            btn.classList.add('open');
+            /* Ouvrir le sous-menu ciblé s'il était fermé */
+            if (!isOpen) {
+                sub.classList.add('open');
+                btn.classList.add('open');
+            }
         }
-    }
-</script>
+    </script>
 
 </body>
+
 </html>

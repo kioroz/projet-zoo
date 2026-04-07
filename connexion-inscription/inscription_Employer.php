@@ -11,13 +11,18 @@
 include '../database.php';
 session_start();
 
-$nom = $_POST['nom'] ?? '';
-$prenom = $_POST['prenom'] ?? '';
-$date_naissance = $_POST['date_naissance'] ?? '';
-$sexe = $_POST['sexe'] ?? '';
-$salaire = $_POST['salaire'] ?? '';
-$login = $_POST['login'] ?? '';
-$password = $_POST['password'] ?? '';
+$nom = $_POST['nom'];
+$prenom = $_POST['prenom'];
+$date_naissance = $_POST['date_naissance'];
+$sexe = $_POST['sexe'];
+$salaire = $_POST['salaire'];
+$login = $_POST['login'];
+$password = $_POST['password'];
+$file = $_FILES["image"];
+$file_name = $_FILES["image"]["name"];
+$file_tmp_name = $_FILES["image"]["tmp_name"];
+
+
 
 if ($nom && $prenom && $date_naissance && $sexe && $salaire && $login && $password) {
     // Vérifier si le login existe déjà
@@ -29,7 +34,10 @@ if ($nom && $prenom && $date_naissance && $sexe && $salaire && $login && $passwo
 
     } else {
         // Insérer le nouvel utilisateur
-        $stmt = $pdo->prepare("INSERT INTO personnel (nom, prenom, date_de_naissance, sexe, login, password, fonction, salaire ) VALUES (:nom, :prenom, :date_naissance, :sexe, :login, :pass, :fonction, :salaire)");
+        $stmt = $pdo->prepare("INSERT INTO personnel (nom, prenom, date_de_naissance, sexe, login, password, fonction, salaire, photo ) VALUES (:nom, :prenom, :date_naissance, :sexe, :login, :pass, :fonction, :salaire, :photo)");
+        $path = "../images_employe/" . $file_name;
+        if(move_uploaded_file($file_tmp_name, $path)) {
+        
         if ($stmt->execute([
             ':nom' => $nom,
             ':prenom' => $prenom,
@@ -38,7 +46,8 @@ if ($nom && $prenom && $date_naissance && $sexe && $salaire && $login && $passwo
             ':login' => $login,
             ':pass' => password_hash($password, PASSWORD_DEFAULT),
             ':fonction' => 'Employer',
-            ':salaire' => $salaire
+            ':salaire' => $salaire,
+            ':photo' => $file_name
         ])) {
             echo "<p>Inscription réussie ! Vous pouvez maintenant vous connecter.</p>";
                         echo "<a href='inscription_employer.html'> retourner </a>";
@@ -48,9 +57,11 @@ if ($nom && $prenom && $date_naissance && $sexe && $salaire && $login && $passwo
             echo "<a href='inscription_Employer.html'> retourner </a>";
         }
     }
+    }
 } else {
     echo "Veuillez remplir tous les champs du formulaire.";
 }
+
 
 
 

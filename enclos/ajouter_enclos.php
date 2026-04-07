@@ -5,7 +5,11 @@ include "../database.php";
 $req = $pdo->query("SELECT id, nom FROM personnel WHERE fonction = 'Employer'");
 $employer = $req->fetchAll();
 
+if(!isset($_SESSION)){
+    header("Location: ../index.php");
+    exit;
 
+}
 
 ?>
 
@@ -47,8 +51,8 @@ $employer = $req->fetchAll();
     <br><br>
 
         <label for="eau">l'enclos possède t-il de l'eau?</label>
-        <input type="radio" name="eau" id="non" value="1"> oui
-        <input type="radio" name="eau" id="oui" value="0"> non
+        <input type="radio" name="eau" id="oui" value="1"> oui
+        <input type="radio" name="eau" id="non" value="0"> non
 
     <br><br>
 
@@ -60,6 +64,7 @@ $employer = $req->fetchAll();
 
 
     <button type="submit">Ajouter</button>
+        <a href="../index.php">menu</a>
 
 </form>
 

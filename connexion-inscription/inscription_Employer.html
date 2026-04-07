@@ -5,12 +5,10 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <link rel="stylesheet" href="style_inscription_employer.css">
 
-          <link rel="stylesheet" href="style_inscription.css">
-
      <title>Document</title>
 </head>
 <body>
-    <form action="inscription_Employer.php" method="POST">
+    <form action="inscription_Employer.php" method="POST" enctype="multipart/form-data">
         <label for="nom">Nom:</label>
         <input type="text" id="nom" name="nom" required><br><br>
 
@@ -34,7 +32,8 @@
         <label for="password">Mot de passe:</label>
         <input type="password" id="password" name="password" required><br><br>
 
-
+<label>Saisir une photo de profil :</label>
+            <input type="file" name="image" class="style1" required><br>
 
         <input type="submit" value="S'inscrire">
                 <a href="../index.php">menu</a>

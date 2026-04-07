@@ -3,51 +3,45 @@ body {
     background: linear-gradient(135deg, #e8f5e9, #f7ffe8);
     margin: 0;
     padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
 }
 
-/* Titre zoo chill */
-h2 {
+/* Titre */
+h1 {
     text-align: center;
     color: #2e7d32;
-    margin-bottom: 30px;
-    font-size: 32px;
+    font-size: 34px;
+    margin-bottom: 25px;
     text-shadow: 1px 1px 0 #c8e6c9;
-    letter-spacing: 1px;
 }
 
-h2::before {
-    content: "🦊 ";
-}
-h2::after {
-    content: " 🐾";
-}
-
-/* Formulaire style jungle */
+/* Conteneur du formulaire */
 form {
-    width: 420px;
-    margin: 0 auto;
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(6px);
-    padding: 30px;
+    padding: 30px 40px;
     border-radius: 15px;
     border: 2px solid #a5d6a7;
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    width: 420px;
+    margin: 0 auto;
 }
 
 /* Labels */
 label {
     font-weight: bold;
+    color: #33691e;
+    font-size: 16px;
     display: block;
     margin-bottom: 6px;
-    color: #33691e;
-    font-size: 15px;
 }
 
 /* Inputs */
-input[type="text"],
 input[type="date"],
-select,
-textarea {
+select {
     width: 100%;
     padding: 12px;
     border: 1px solid #c5e1a5;
@@ -57,23 +51,15 @@ textarea {
     background: #f1f8e9;
     transition: 0.2s;
 }
-input[type="file"] {
-    border: none;
-    margin-bottom: 18px;
-    font-size: 15px;
-    background: #f1f8e9;
-    transition: 0.2s;
-    padding: 20px;
-}
+
 input:focus,
-textarea:focus,
 select:focus {
     background: #dcedc8;
     border-color: #81c784;
     outline: none;
 }
 
-/* Bouton style zoo */
+/* Bouton */
 button {
     width: 100%;
     padding: 14px;
@@ -92,24 +78,10 @@ button:hover {
     transform: scale(1.03);
 }
 
-/* Liens style boutons */
-a {
-    display: inline-block;
-    margin: 10px;
-    padding: 14px 25px;
-    background: #66bb6a;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    transition: 0.2s;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+/* Emoji décoratif */
+h1::before {
+    content: "🦁 ";
 }
-
-/* Hover */
-a:hover {
-    background: #57a65a;
-    transform: scale(1.05);
+h1::after {
+    content: " 🐾";
 }
-

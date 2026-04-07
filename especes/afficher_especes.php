@@ -44,7 +44,8 @@ $row = $stmt->fetchAll();
         </tr>
     <?php endforeach; ?>
 </table>
-    
+            <a href="../index.php">menu</a>
+
 
 
 

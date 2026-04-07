@@ -9,8 +9,11 @@
 <body>
     <?php
 @include "../database.php";
- session_start();
-echo "Bienvenue, " . htmlspecialchars($_SESSION['nom'] . ' ' . $_SESSION['prenom']) . ' ' . $_SESSION['fonction']." 👋";
+if(!isset($_SESSION)){
+    header("Location: ../index.php");
+    exit;
+
+}echo "Bienvenue, " . htmlspecialchars($_SESSION['nom'] . ' ' . $_SESSION['prenom']) . ' ' . $_SESSION['fonction']." 👋";
 
     $sql = "SELECT * FROM personnel WHERE fonction = 'Directeur'";
     $stmt = $pdo -> prepare($sql);
@@ -24,6 +27,7 @@ echo "Bienvenue, " . htmlspecialchars($_SESSION['nom'] . ' ' . $_SESSION['prenom
     echo "<th> date de naissance</th>";
     echo "<th> sexe</th>";
     echo "<th> salaire</th>";
+    echo "<th> photo</th>";
     foreach($row as $rows){
         echo "<tr>";
         echo "<td>" . $rows["id"]."</td>";
@@ -32,6 +36,7 @@ echo "Bienvenue, " . htmlspecialchars($_SESSION['nom'] . ' ' . $_SESSION['prenom
         echo "<td>" . $rows["date_de_naissance"]."</td>";
         echo "<td>" . $rows["sexe"]."</td>";
         echo "<td>" . $rows["salaire"]."</td>";
+        echo "<td><img src='../images_employe/" . $rows["photo"] . "' alt='" . $rows["nom"] . "' width='100'></td>";
 
 
     }
@@ -40,6 +45,7 @@ echo "Bienvenue, " . htmlspecialchars($_SESSION['nom'] . ' ' . $_SESSION['prenom
 
     ?>
 
+        <a href="../index.php">menu</a>
 
     
 </body>

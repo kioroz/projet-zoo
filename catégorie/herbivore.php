@@ -36,6 +36,7 @@
         </tr>
     <?php endforeach; ?>
 </table>
+        <a href="../index.php">menu</a>
 
 
 </body>

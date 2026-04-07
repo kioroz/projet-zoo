@@ -11,19 +11,23 @@
 <body>
     <?php
     @include '../database.php';
-    /*
+    
 session_start();
-if(!isset($_SESSION['fonction']) || $_SESSION['fonction'] !== 'Directeur') {
+if(!isset($_SESSION['fonction']) || $_SESSION['fonction'] != 'Directeur') {
     header("Location: ../index.html");
     exit;
-}*/
-    $nom = $_POST['nom'] ?? '';
-    $prenom = $_POST['prenom'] ?? '';
-    $date_naissance = $_POST['date_naissance'] ?? '';
-    $sexe = $_POST['sexe'] ?? '';
-    $salaire = $_POST['salaire'] ?? '';
-    $login = $_POST['login'] ?? '';
-    $password = $_POST['password'] ?? '';
+}
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $date_naissance = $_POST['date_naissance'];
+    $sexe = $_POST['sexe'];
+    $salaire = $_POST['salaire'];
+    $login = $_POST['login'];
+    $password = $_POST['password'];
+    $file = $_FILES["image"];
+    $file_name = $_FILES["image"]["name"];
+    $file_tmp_name = $_FILES["image"]["tmp_name"];
+
 
     if ($nom && $prenom && $date_naissance && $sexe && $salaire && $login && $password) {
         // Vérifier si le login existe déjà
@@ -35,8 +39,11 @@ if(!isset($_SESSION['fonction']) || $_SESSION['fonction'] !== 'Directeur') {
             echo "<a href='inscription_Directeur.html'>Retourner</a>";
             echo "</div>";
         } else {
+            $req = "INSERT INTO personnel (nom, prenom, date_de_naissance, sexe, login, password, fonction, salaire, photo) VALUES (:nom, :prenom, :date_naissance, :sexe, :login, :pass, :fonction, :salaire, :photo)";
             // Insérer le nouvel utilisateur
-            $stmt = $pdo->prepare("INSERT INTO personnel (nom, prenom, date_de_naissance, sexe, login, password, fonction, salaire ) VALUES (:nom, :prenom, :date_naissance, :sexe, :login, :pass, :fonction, :salaire)");
+            $stmt = $pdo->prepare($req);
+            $path = "../images_employe/" . $file_name;
+            if(move_uploaded_file($file_tmp_name, $path)) {
             if ($stmt->execute([
                 ':nom' => $nom,
                 ':prenom' => $prenom,
@@ -45,7 +52,8 @@ if(!isset($_SESSION['fonction']) || $_SESSION['fonction'] !== 'Directeur') {
                 ':login' => $login,
                 ':pass' => password_hash($password, PASSWORD_DEFAULT),
                 ':fonction' => 'Directeur',
-                ':salaire' => $salaire
+                ':salaire' => $salaire,
+                ':photo' => $file_name
             ])) {
                 echo "<div class='message-box'>";
                 echo "<p class='success'>Inscription réussie ! Vous pouvez maintenant vous connecter.</p>";
@@ -57,6 +65,7 @@ if(!isset($_SESSION['fonction']) || $_SESSION['fonction'] !== 'Directeur') {
                 echo "<a href='inscription_Directeur.html'>Retourner</a>";
                 echo "</div>";
             }
+        }
         }
     } else {
         echo "<p>Veuillez remplir tous les champs du formulaire.</p>";

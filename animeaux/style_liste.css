@@ -1,6 +1,6 @@
 body {
     font-family: "Trebuchet MS", Arial, sans-serif;
-    background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+    background: linear-gradient(135deg, #e8f5e9, #f7ffe8);
     margin: 0;
     padding: 40px;
 }
@@ -10,51 +10,80 @@ h1 {
     text-align: center;
     color: #2e7d32;
     margin-bottom: 30px;
-    font-size: 32px;
+    font-size: 36px;
     letter-spacing: 1px;
-    text-shadow: 1px 1px 0 #c8e6c9;
+    text-shadow: 2px 2px 0 #d0e8c8;
+    font-weight: bold;
 }
 
-/* Table style jungle */
+
+/* Liens style boutons */
+a {
+    display: inline-block;
+    margin: 10px;
+    padding: 14px 25px;
+    background: #66bb6a;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.2s;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+/* Hover */
+a:hover {
+    background: #57a65a;
+    transform: scale(1.05);
+}
+
+
+
+/* Table style jungle amélioré */
 table {
     width: 90%;
     margin: 0 auto;
     border-collapse: collapse;
-    background: #ffffff;
-    box-shadow: 0 0 12px rgba(0,0,0,0.15);
-    border-radius: 12px;
+    background: #ffffffcc; /* léger transparent */
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.18);
+    border-radius: 15px;
     overflow: hidden;
-    border: 2px solid #a5d6a7;
+    border: 3px solid #9ccc65;
 }
 
 /* En-têtes avec emojis animaux */
 th {
-    background: #66bb6a;
+    background: linear-gradient(90deg, #66bb6a, #81c784);
     color: white;
-    padding: 14px;
+    padding: 16px;
     text-align: left;
-    font-size: 17px;
+    font-size: 18px;
     letter-spacing: 0.5px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #4d8f4f;
 }
 
 /* Cellules */
 td {
-    padding: 12px;
+    padding: 14px;
     border-bottom: 1px solid #dcedc8;
-    font-size: 15px;
-    color: #33691e;
+    font-size: 16px;
+    color: #2e7d32;
 }
 
 /* Alternance jungle */
 tr:nth-child(even) {
-    background: #f1f8e9;
+    background: #f3ffe8;
 }
 
 /* Hover chill */
 tr:hover {
-    background: #dcedc8;
+    background: #e3f7d8;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.25s;
+    transform: scale(1.01);
 }
 
 /* Dernière colonne centrée */
@@ -67,3 +96,9 @@ table th:last-child {
 tr td:first-child::before {
     content: "🦒 ";
 }
+
+/* Variation d’animaux selon la ligne */
+tr:nth-child(3) td:first-child::before { content: "🦁 "; }
+tr:nth-child(4) td:first-child::before { content: "🐘 "; }
+tr:nth-child(5) td:first-child::before { content: "🐼 "; }
+tr:nth-child(6) td:first-child::before { content: "🦊 "; }

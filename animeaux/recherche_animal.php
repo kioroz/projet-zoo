@@ -9,6 +9,11 @@
 <body>
     <?php
     include "../database.php";
+    if(!isset($_SESSION)){
+    header("Location: ../index.php");
+    exit;
+
+}
     $nom = trim($_POST['nom']);
     
     $sql = "SELECT 
@@ -43,5 +48,7 @@
 
     echo "</table>";
     ?>
+            <a href="../index.php">menu</a>
+
 </body>
 </html>

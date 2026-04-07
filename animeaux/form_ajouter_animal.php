@@ -4,7 +4,14 @@ include "../database.php";
 // Récupération des espèces pour la liste déroulante
 $req = $pdo->query("SELECT id, nom_espece FROM especes ORDER BY nom_espece");
 $especes = $req->fetchAll(PDO::FETCH_ASSOC);
+session_start();
+if(!isset($_SESSION)){
+    header("Location: ../index.php");
+    exit;
+
+}
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -17,7 +24,7 @@ $especes = $req->fetchAll(PDO::FETCH_ASSOC);
 
 <h2>Ajouter un animal</h2>
 
-<form action="ajouter_animal.php" method="post">
+<form action="ajouter_animal.php" method="post" enctype="multipart/form-data">
 
     <label>Espèce :</label>
     <select name="id_espece" required>
@@ -47,10 +54,12 @@ $especes = $req->fetchAll(PDO::FETCH_ASSOC);
     <label>Commentaire :</label><br>
     <textarea name="commentaire" rows="4" cols="40"></textarea>
     <br><br>
+    <label>Saisir une photo de l'animal :</label>
+            <input type="file" name="image" class="style1" required><br>
 
     <button type="submit">Ajouter</button>
+<a href="../index.php"> menu</a>
 
 </form>
-<a href="../index.php"> menu</a>
 </body>
 </html>

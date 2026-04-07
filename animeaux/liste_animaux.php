@@ -29,6 +29,7 @@ $row = $stmt->fetchAll();
         <th>Commentaire</th>
         <th>Espèce</th>
         <th>Sexe</th>
+        <th>photo</th>
     </tr>
 
     <?php foreach ($row as $rows): ?>
@@ -38,9 +39,12 @@ $row = $stmt->fetchAll();
             <td><?= $rows["commentaire"] ?></td>
             <td><?= $rows["nom_espece"] ?></td>
             <td><?= $rows["sexe"] ?></td>
+            <td><img src="../images_animaux/<?= $rows["photo"] ?>" alt="<?= $rows["nom_animal"] ?>" width="100"></td>
         </tr>
     <?php endforeach; ?>
 </table>
+        <a href="../index.php">menu</a>
+
 
 </body>
 </html>
