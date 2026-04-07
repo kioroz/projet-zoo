@@ -31,9 +31,15 @@
 	echo ' <form action="update.php" method="post">';
 echo '<input type="hidden" name="id" value="' . $enreg['id'] . '">';
 
-    echo "<p name='id'> id de l'animal " . $enreg['id'] ."</p>"; 
+    echo "<p name='id'> id de l'animal: " . $enreg['id'] ."</p>"; 
+		echo "<p name='date'> date de naissance de l'animal </p>";
+
     echo '<input type="date" name ="date" value="'.$enreg['date_de_naissance'].'">';
+	echo "<p name='nom'> nom de l'animal </p>";
+
     echo '<input type="text" name ="nom" value="'.$enreg['nom_animal'].'">';
+		echo "<p name='com'> commentaire de l'animal </p>";
+
     echo '<input type="text" name ="com" value="'.$enreg['commentaire'].'">';
 
 
