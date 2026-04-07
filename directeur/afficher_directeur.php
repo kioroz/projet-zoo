@@ -9,11 +9,14 @@
 <body>
     <?php
 @include "../database.php";
-if(!isset($_SESSION)){
+   session_start();
+    if($_SESSION["user_id"] != "Directeur"){
     header("Location: ../index.php");
     exit;
 
-}echo "Bienvenue, " . htmlspecialchars($_SESSION['nom'] . ' ' . $_SESSION['prenom']) . ' ' . $_SESSION['fonction']." 👋";
+}
+
+echo "Bienvenue, " . htmlspecialchars($_SESSION['nom'] . ' ' . $_SESSION['prenom']) . ' ' . $_SESSION['fonction']." 👋";
 
     $sql = "SELECT * FROM personnel WHERE fonction = 'Directeur'";
     $stmt = $pdo -> prepare($sql);

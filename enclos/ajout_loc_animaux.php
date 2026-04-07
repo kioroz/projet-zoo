@@ -10,12 +10,12 @@
    <?php
 include "../database.php";
 
-if(!isset($_SESSION)){
+   session_start();
+    if(!isset($_SESSION["user_id"])){
     header("Location: ../index.php");
     exit;
 
 }
-
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $id_animaux = $_POST['id_animaux'];

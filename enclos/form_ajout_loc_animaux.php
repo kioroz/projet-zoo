@@ -14,7 +14,8 @@
     <label for="id_animaux">Animal :</label>
     <select name="id_animaux" id="id_animaux" required>
         <?php
-        if(!isset($_SESSION)){
+   session_start();
+    if(!isset($_SESSION["user_id"])){
     header("Location: ../index.php");
     exit;
 

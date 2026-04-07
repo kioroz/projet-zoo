@@ -5,12 +5,12 @@ include "../database.php";
 $req = $pdo->query("SELECT * FROM types_nourriture");
 $espece = $req->fetchAll();
 
-if(!isset($_SESSION)){
+   session_start();
+    if(!isset($_SESSION["user_id"])){
     header("Location: ../index.php");
     exit;
 
 }
-
 ?>
 
 <!DOCTYPE html>

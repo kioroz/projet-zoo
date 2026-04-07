@@ -4,8 +4,8 @@ include "../database.php";
 // Récupération des espèces pour la liste déroulante
 $req = $pdo->query("SELECT id, nom_espece FROM especes ORDER BY nom_espece");
 $especes = $req->fetchAll(PDO::FETCH_ASSOC);
-session_start();
-if(!isset($_SESSION)){
+   session_start();
+    if(!isset($_SESSION["user_id"])){
     header("Location: ../index.php");
     exit;
 

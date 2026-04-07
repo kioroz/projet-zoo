@@ -18,7 +18,12 @@ JOIN types_nourriture
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 $row = $stmt->fetchAll();
+    session_start();
+    if(!isset($_SESSION["user_id"])){
+    header("Location: ../index.php");
+    exit;
 
+}
 
     
     ?>

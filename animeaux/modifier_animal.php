@@ -13,7 +13,8 @@
     $stmt->execute([':id' => $d]);
     $enreg = $stmt->fetch(); // un seul enregistrement
 
-if(!isset($_SESSION)){
+   session_start();
+    if(!isset($_SESSION["user_id"])){
     header("Location: ../index.php");
     exit;
 
